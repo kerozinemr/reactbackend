@@ -1,0 +1,1 @@
+gunicorn assessment.wsgi:application
