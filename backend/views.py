@@ -3,8 +3,10 @@ from rest_framework.response import Response
 from .models import Trip
 from .utils import get_ors_route
 from django.utils import timezone
+from django.views.decorators.csrf import csrf_exempt
 
 @api_view(['POST'])
+@csrf_exempt
 def create_trip(request):
     data = request.data
     start = data.get('start')  # expected: {'lat': float, 'lng': float}

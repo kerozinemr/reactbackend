@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
-from rest_framework import permission
-from rest_framework.permission import AllowAny
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c4*gt-rasnj(0-lrn8yu##(7(cs1@i1m8m3iz6-j-n!ku@0d-f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['reactbackend-snff.onrender.com', '127.0.0.1']
 
 
 # Application definition
@@ -54,14 +53,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
-
-REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':[
-    'rest_framework.permission.AllowAny'
-]}
-
+Access_Control_Allow_Origin = True
 CORS_ORIGIN_ALLOW_ALL = True
+
 
 ROOT_URLCONF = 'assessment.urls'
 
